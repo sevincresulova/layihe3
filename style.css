@@ -1,6 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 .center{
     text-align: center;
+    position: absolute;
+    width: 587px;
+    height: 32px;
+    left: 253px;
+    top: 106px;
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 42px;
+    padding-left: 30px;
+    
+    color: #000000;
+    
+
+    
 }
 body{
     font-family: 'Roboto', sans-serif;
@@ -16,7 +33,9 @@ ul{
     
 }
 li{
-    padding: 10px;
+    padding: 5px;
+    font-size: small;
+    margin-left: 30px;
 }
 .zero{
     display: flex;
@@ -27,5 +46,153 @@ li{
 
 
 .list{
-    background-color: rgb(235, 233, 233);
+    background-color: #F5F5F6;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    list-style: none;
+    
+
+}
+.first{
+    height: 19px;
+    width: 44px;
+    left: 253px;
+    top: 17px;
+    border-radius: nullpx;
+    color:black;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+    padding-left: 64px;
+}
+.one{
+    height: 19px;
+    width: 50px;
+    left: 310px;
+    top: 17px;
+    border-radius: nullpx;
+    font-family: 'Roboto';
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: #959BA4;
+    display: flex;
+    align-items: center;
+    padding-left: 13px;
+}
+.two{
+    height: 19px;
+    width: 94px;
+    left: 381px;
+    top: 17px;
+    border-radius: nullpx;
+    font-family: 'Roboto';
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 21px;
+    color: #959BA4;
+    
+}
+.thr{
+    height: 19px;
+    width: 94px;
+    left: 486px;
+    top: 17px;
+    border-radius: nullpx;
+    font-family: 'Roboto';
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    color: #959BA4;
+    padding-left: 11px;
+}
+.four{
+    height: 19px;
+    width: 68px;
+    left: 596px;
+    top: 17px;
+    border-radius: nullpx;
+    font-family: 'Roboto';
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0.06em;
+    text-align: left; 
+    display: flex;
+    align-items: center;
+    color: #959BA4;
+    padding-left: 10px;
+}
+.five{
+    height: 19px;
+    width: 101px;
+    left: 671px;
+    top: 17px;
+    border-radius: nullpx;
+    font-family: 'Roboto';
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    color: #959BA4;
+    padding-left: 7px;
+}
+.six{
+    height: 19px;
+    width: 101px;
+    left: 782px;
+    top: 17px;
+    border-radius: nullpx;
+    font-family: 'Roboto';
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    display: flex;
+    align-items: center; 
+    color: #959BA4;
+    padding-left: 10px;      
+}
+
+.last{
+    height: 33px;
+    width: 58px;  
+    padding-left: 109px;
+    right: 22px;
+    top: 9px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    display: flex;
+    color: black;      
+}
+
+.pic{
+    padding-top: 15px;
+    padding-left: 100px;
+    justify-content: space-around;
 }
