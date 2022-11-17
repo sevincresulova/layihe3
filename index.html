@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="zero">
-        <div class="list"><hr>
+        <div class="list">
          <div class="pic"> <img src="/Asset 1@3x 1.png "> </div>
           
         <div   style="font-size: 15px;font-weight:100; margin-right: 15px;">
@@ -36,42 +36,50 @@
                     РАЗВЛЕЧЕНИЯ
                   </li>
                 </ul>
-        </div>
-    </div>
-    <div class="last"><button>  ВОЙТИ</button></div>
-        </div>
-        <div class="center">
-            <h1> Конвертер валют онлайн</h1>
-        </div>
-        <div class="left">
-          <p class="mine">У меня есть</p>
-          <div class="eight">
-            <div class="btnwrapper">
-              <button class="btn">RUB</button>
-              <button class="btn">USD</button>
-              <button class="btn">EUR</button>
-              <button class="btn">GBP</button>
+                </div>
+                <div><button type="button" onclick="javascript:window.close()" class="x">
+                  ВОЙТИ
+                </button></div>
             </div>
-            <div class="container">
-              <input class="input" type="number">
-              <p class="show"></p>
-            </div>
-      </div>
-      </div>
-      <div class="right">
-        <p class="wantto"> Хочу приобрести</p>
-        <div class="eight">
-          <div class="btnwrapper">
-            <button class="btn">RUB</button>
-            <button class="btn">USD</button>
-            <button class="btn">EUR</button>
-            <button class="btn">GBP</button>
+            
+      
           </div>
-          <div class="container">
-            <input class="input" type="number">
-            <p class="show"></p>
+          <div class="main">
+            <h1>Конвертер валют онлайн</h1>
+          </div> 
+          <div class="center">
+          <div class="left">
+            <p class="have">У меня есть </p>
+            <div class="eight">
+              <div class="btnwrapper">
+                <button id="rub1" class="btn">RUB</button>
+                <button id="usd1" class="btn">USD</button>
+                <button id="eur1" class="btn"> EUR</button>
+                <button id="gbp1" class="btn">GBP</button>
+              </div>
+              <div class="container">
+                <input id="input1" class="input" type="number">
+                <p id="show1" class="show"></p>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <p class="want">Хочу приобрести</p>
+            <div class="eight">
+              <div class="btnwrapper">
+                <button id="rub2" class="btn">RUB</button>
+                <button id="usd2" class="btn">USD</button>
+                <button id="eur2" class="btn"> EUR</button>
+                <button id="gbp2" class="btn">GBP</button>
+              </div>
+              <div class="container">
+                <input id="input2" class="input" type="number">
+                <p id="show2" class="show"></p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>    
-</body>
-</html>
+        </div>
+          <script src="/main.js"></script>
+      </body>
+      </html>
