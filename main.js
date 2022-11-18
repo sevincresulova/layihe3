@@ -4,14 +4,14 @@ const usd1 = document.getElementById('usd1')
 const eur1 = document.getElementById('eur1')
 const gbp1 = document.getElementById('gbp1')
 let input1 = document.getElementById('input1')
-let p1 = document.getElementById('p1')
+let show1 = document.getElementById('show1')
 
 const rub2 = document.getElementById('rub2')
 const usd2 = document.getElementById('usd2')
 const eur2 = document.getElementById('eur2')
 const gbp2 = document.getElementById('gbp2')
 let input2 = document.getElementById('input2')
-let p2 = document.getElementById('p2')
+let show2 = document.getElementById('show2')
 
 
 rub1.addEventListener('click', changeActive)
@@ -27,12 +27,12 @@ gbp2.addEventListener('click', changeActive)
 
 
 function changeActive(e) {
-    if (e.target.className === "currency-item") {
+    if (e.target.className === "btn") {
         const currencies = [...e.target.parentElement.children];
-        currencies.forEach(el => {
+        currencies.forEach((item)=> {
 
-            if (el.classList.contains("active")) {
-                el.classList.remove("active")
+            if (item.classList.contains("active")) {
+                item.classList.remove("active")
             }
         })
         e.target.classList.add("active");
@@ -42,9 +42,9 @@ function changeActive(e) {
     // RUB
     if (rub1.classList.contains("active") && rub2.classList.contains("active")) {
 
-        p1.innerText = `1 RUB = 1 RUB`
+        show1.innerText = `1 RUB = 1 RUB`
         input2.value = input1.value
-        p2.innerText = `1 RUB = 1 RUB`
+        show2.innerText = `1 RUB = 1 RUB`
 
     }
 
@@ -52,15 +52,15 @@ function changeActive(e) {
         fetch('https://api.exchangerate.host/latest?base=RUB&symbols=USD')
             .then(res => res.json())
             .then((data) => {
-                p1.innerText = `1 RUB = ${data.rates.USD} USD`
+                show1.innerText = `1 RUB = ${data.rates.USD} USD`
                 input2.value = input1.value * data.rates.USD
 
             })
         fetch('https://api.exchangerate.host/latest?base=USD&symbols=RUB')
             .then(res => res.json())
             .then((data) => {
-                p2.innerText = `1 USD = ${data.rates.RUB} RUB`
-            })
+                show2.innerText = `1 USD = ${data.rates.RUB} RUB`
+          })
 
 
     }
@@ -70,32 +70,32 @@ function changeActive(e) {
         fetch('https://api.exchangerate.host/latest?base=RUB&symbols=EUR')
             .then(res => res.json())
             .then((data) => {
-                p1.innerText = `1 RUB = ${data.rates.EUR} EUR`
+                show1.innerText = `1 RUB = ${data.rates.EUR} EUR`
                 input2.value = input1.value * data.rates.EUR
 
             })
         fetch('https://api.exchangerate.host/latest?base=EUR&symbols=RUB')
             .then(res => res.json())
             .then((data) => {
-                p2.innerText = `1 EUR = ${data.rates.RUB} RUB`
+                show2.innerText = `1 EUR = ${data.rates.RUB} RUB`
             })
 
     }
 
 
-
+    
     if (rub1.classList.contains("active") && gbp2.classList.contains("active")) {
         fetch('https://api.exchangerate.host/latest?base=RUB&symbols=GBP')
             .then(res => res.json())
             .then((data) => {
-                p1.innerText = `1 RUB = ${data.rates.GBP} GBP`
+                show1.innerText = `1 RUB = ${data.rates.GBP} GBP`
                 input2.value = input1.value * data.rates.GBP
 
             })
         fetch('https://api.exchangerate.host/latest?base=GBP&symbols=RUB')
             .then(res => res.json())
             .then((data) => {
-                p2.innerText = `1 GBP = ${data.rates.RUB} RUB`
+                show2.innerText = `1 GBP = ${data.rates.RUB} RUB`
             })
     }
 
@@ -104,58 +104,58 @@ function changeActive(e) {
         fetch('https://api.exchangerate.host/latest?base=USD&symbols=RUB')
             .then(res => res.json())
             .then((data) => {
-                p1.innerText = `1 USD = ${data.rates.RUB} RUB`
+                show1.innerText = `1 USD = ${data.rates.RUB} RUB`
                 input2.value = input1.value * data.rates.RUB
 
             })
         fetch('https://api.exchangerate.host/latest?base=RUB&symbols=USD')
             .then(res => res.json())
             .then((data) => {
-                p2.innerText = `1 RUB = ${data.rates.USD} USD`
+                show2.innerText = `1 RUB = ${data.rates.USD} USD`
             })
     }
     if (usd1.classList.contains("active") && gbp2.classList.contains("active")) {
         fetch('https://api.exchangerate.host/latest?base=USD&symbols=GBP')
             .then(res => res.json())
             .then((data) => {
-                p1.innerText = `1 USD = ${data.rates.GBP} GBP`
+                show1.innerText = `1 USD = ${data.rates.GBP} GBP`
                 input2.value = input1.value * data.rates.GBP
 
             })
         fetch('https://api.exchangerate.host/latest?base=GBP&symbols=USD')
             .then(res => res.json())
             .then((data) => {
-                p2.innerText = `1 GBP = ${data.rates.USD} USD`
+                show2.innerText = `1 GBP = ${data.rates.USD} USD`
             })
     }
     if (usd1.classList.contains("active") && eur2.classList.contains("active")) {
         fetch('https://api.exchangerate.host/latest?base=USD&symbols=EUR')
             .then(res => res.json())
             .then((data) => {
-                p1.innerText = `1 USD = ${data.rates.EUR} EUR`
+                show1.innerText = `1 USD = ${data.rates.EUR} EUR`
                 input2.value = input1.value * data.rates.EUR
 
             })
         fetch('https://api.exchangerate.host/latest?base=EUR&symbols=USD')
             .then(res => res.json())
             .then((data) => {
-                p2.innerText = `1 EUR = ${data.rates.USD} USD`
+                show2.innerText = `1 EUR = ${data.rates.USD} USD`
             })
     }
     if (usd1.classList.contains("active") && usd2.classList.contains("active")) {
 
-        p1.innerText = `1 USD = 1 USD`
+        show1.innerText = `1 USD = 1 USD`
         input2.value = input1.value
-        p2.innerText = `1 USD = 1 USD`
+        show2.innerText = `1 USD = 1 USD`
 
     }
 
     // EUR
     if (eur1.classList.contains("active") && eur2.classList.contains("active")) {
 
-        p1.innerText = `1 EUR = 1 EUR`
+        show1.innerText = `1 EUR = 1 EUR`
         input2.value = input1.value
-        p2.innerText = `1 EUR = 1 EUR`
+        show2.innerText = `1 EUR = 1 EUR`
 
     }
 
@@ -163,86 +163,86 @@ function changeActive(e) {
         fetch('https://api.exchangerate.host/latest?base=EUR&symbols=RUB')
             .then(res => res.json())
             .then((data) => {
-                p1.innerText = `1 EUR = ${data.rates.RUB} RUB`
+                show1.innerText = `1 EUR = ${data.rates.RUB} RUB`
                 input2.value = input1.value * data.rates.RUB
             })
         fetch('https://api.exchangerate.host/latest?base=RUB&symbols=EUR')
             .then(res => res.json())
             .then((data) => {
-                p2.innerText = `1 RUB = ${data.rates.EUR} EUR`
+                show2.innerText = `1 RUB = ${data.rates.EUR} EUR`
             })
     }
     if (eur1.classList.contains("active") && usd2.classList.contains("active")) {
         fetch('https://api.exchangerate.host/latest?base=EUR&symbols=USD')
             .then(res => res.json())
             .then((data) => {
-                p1.innerText = `1 EUR = ${data.rates.USD} USD`
+                show1.innerText = `1 EUR = ${data.rates.USD} USD`
                 input2.value = input1.value * data.rates.USD
             })
         fetch('https://api.exchangerate.host/latest?base=USD&symbols=EUR')
             .then(res => res.json())
             .then((data) => {
-                p2.innerText = `1 USD = ${data.rates.EUR} EUR`
+                show2.innerText = `1 USD = ${data.rates.EUR} EUR`
             })
     }
     if (eur1.classList.contains("active") && gbp2.classList.contains("active")) {
         fetch('https://api.exchangerate.host/latest?base=EUR&symbols=GBP')
             .then(res => res.json())
             .then((data) => {
-                p1.innerText = `1 EUR = ${data.rates.GBP} GBP`
+                show1.innerText = `1 EUR = ${data.rates.GBP} GBP`
                 input2.value = input1.value * data.rates.GBP
             })
         fetch('https://api.exchangerate.host/latest?base=GBP&symbols=EUR')
             .then(res => res.json())
             .then((data) => {
-                p2.innerText = `1 GBP = ${data.rates.EUR} EUR`
+                show2.innerText = `1 GBP = ${data.rates.EUR} EUR`
             })
     }
 
     // GBP
     if (gbp1.classList.contains("active") && gbp2.classList.contains("active")) {
 
-        p1.innerText = `1 GBP = 1 GBP`
+        show1.innerText = `1 GBP = 1 GBP`
         input2.value = input1.value
-        p2.innerText = `1 GBP = 1 GBP`
+        show2.innerText = `1 GBP = 1 GBP`
 
     }
     if (gbp1.classList.contains("active") && rub2.classList.contains("active")) {
         fetch('https://api.exchangerate.host/latest?base=GBP&symbols=RUB')
             .then(res => res.json())
             .then((data) => {
-                p1.innerText = `1 GBP = ${data.rates.RUB} RUB`
+                show1.innerText = `1 GBP = ${data.rates.RUB} RUB`
                 input2.value = input1.value * data.rates.RUB
             })
         fetch('https://api.exchangerate.host/latest?base=RUB&symbols=GBP')
             .then(res => res.json())
             .then((data) => {
-                p2.innerText = `1 RUB = ${data.rates.GBP} GBP`
+                show2.innerText = `1 RUB = ${data.rates.GBP} GBP`
             })
     } if (gbp1.classList.contains("active") && usd2.classList.contains("active")) {
         fetch('https://api.exchangerate.host/latest?base=GBP&symbols=USD')
             .then(res => res.json())
             .then((data) => {
-                p1.innerText = `1 GBP = ${data.rates.USD} USD`
+                show1.innerText = `1 GBP = ${data.rates.USD} USD`
                 input2.value = input1.value * data.rates.USD
             })
         fetch('https://api.exchangerate.host/latest?base=USD&symbols=GBP')
             .then(res => res.json())
             .then((data) => {
-                p2.innerText = `1 USD = ${data.rates.GBP} GBP`
+                show2.innerText = `1 USD = ${data.rates.GBP} GBP`
             })
     }
     if (gbp1.classList.contains("active") && eur2.classList.contains("active")) {
         fetch('https://api.exchangerate.host/latest?base=GBP&symbols=EUR')
             .then(res => res.json())
             .then((data) => {
-                p1.innerText = `1 GBP = ${data.rates.EUR} EUR`
+                show1.innerText = `1 GBP = ${data.rates.EUR} EUR`
                 input2.value = input1.value * data.rates.EUR
             })
         fetch('https://api.exchangerate.host/latest?base=EUR&symbols=GBP')
             .then(res => res.json())
             .then((data) => {
-                p2.innerText = `1 EUR = ${data.rates.GBP} GBP`
+                show2.innerText = `1 EUR = ${data.rates.GBP} GBP`
             })
     }
 

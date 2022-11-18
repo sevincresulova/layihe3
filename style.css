@@ -238,12 +238,51 @@ h1{
 .btn,.x {
    width: 25%;
    height: 33px;
-   background-color: white;
+   background-color: rgb(240, 238, 241);
    border: none;
-   border: 1px solid gray;
+   border: 1px solid gray
 }
 .btn:hover{
    color: black;
-   background-color: rgb(160, 72, 243);
+   background-color: rgb(179, 126, 228);
+   color: white;
    border: none;
+}
+.active{
+    background-color: rgb(149, 69, 224);
+    color: white;
+}
+@media only screen and (max-width: 1150px) {
+    .main {
+        display: block;
+    }
+
+    .right {
+        
+        margin-bottom: 40px;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+    #list {
+        display: none;
+    }
+
+    .btn {
+        display: block;
+    }
+
+    .options {
+        padding: 10px;
+    }
+    #list li {
+        padding:12px 8px 12px 8px;
+    }
+    #list{
+        position: absolute;
+        background-color: #F5F5F6;
+        margin-top: 10px;
+    }
+
 }
